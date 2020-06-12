@@ -6,6 +6,7 @@ const ColorPicker = () => {
   const [currentColor, setCurrentColor] = useState<string>("");
 
   const handlePickedColor = (color: string) => {
+    console.log(color)
     setCurrentColor(color);
   };
 
