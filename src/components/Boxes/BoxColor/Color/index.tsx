@@ -4,11 +4,17 @@ import styled from "styled-components";
 
 const StyledDiv = styled.div`
   background-color: ${(props) => props.color};
-  width: 50px;
-  height: 50px;
-  border-radius: 10px;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 7px;
   margin-bottom: 5px;
   cursor: pointer;
+
+  @media (min-width: 1024px) {
+    width: 8rem;
+    height: 8rem;
+    margin-bottom: 10px;
+  }
 `;
 
 interface Props {

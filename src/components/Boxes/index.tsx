@@ -10,6 +10,10 @@ interface Props {
 const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+  
+  @media (min-width: 1024px) {
+    grid-gap: 0.9rem;
+  }
 `;
 
 const Boxes: React.FC<Props> = (props) => {
