@@ -9,11 +9,16 @@ const StyledDiv = styled.div`
   border-radius: 7px;
   margin-bottom: 5px;
   cursor: pointer;
+  transition: transform .2s;
 
   @media (min-width: 1024px) {
     width: 8rem;
     height: 8rem;
     margin-bottom: 10px;
+  }
+
+  &:hover {
+    transform: scale(1.1);
   }
 `;
 
