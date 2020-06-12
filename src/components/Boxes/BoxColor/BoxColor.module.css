@@ -4,9 +4,11 @@
   border: 1px solid black;
   margin: 10px 10px;
   padding: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 .colorTitle {
   margin: 0;
-  text-transform: uppercase;
+  font-size: 1.6rem;
 }
