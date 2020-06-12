@@ -1,14 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Boxes from "./components/Boxes";
 import ColorContext from "./context/ColorContext";
+import * as crypto from 'crypto';
 
 const ColorPicker = () => {
   const [currentColor, setCurrentColor] = useState<string>("");
-
+  const [randomColors, setRandomColors] = useState<string[]>([])
+  
   const handlePickedColor = (color: string) => {
-    console.log(color)
     setCurrentColor(color);
   };
+
+  useEffect(() => {
+    const colors = []
+    for (let c = 0; c < 100; c++) {
+      colors.push(`#${crypto.randomBytes(3).toString('hex')}`)
+    }
+
+    setRandomColors(colors)
+  }, [])
 
   return (
     <div>
@@ -17,7 +27,7 @@ const ColorPicker = () => {
           pickedColor: handlePickedColor,
         }}
       >
-        <Boxes colors={["#32a852", "#325fa8", "#4ca832", "#a84032"]} />
+        <Boxes colors={randomColors} />
       </ColorContext.Provider>
     </div>
   );
