@@ -1,11 +1,18 @@
 .BoxColor {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  border: 3px solid transparent;
+  border-radius: 5px;
   margin: 10px 10px;
   padding: 10px;
   justify-content: center;
   align-items: center;
+  background-color: rgb(238, 238, 238);
+  transition: 0.3s ease-in-out;
+}
+
+.BoxColor:hover {
+  border: 3px solid #39bb40;
 }
 
 .colorTitle {

@@ -21,7 +21,7 @@ const ColorPicker = () => {
   }, [])
 
   return (
-    <div>
+    <div style={{width: '85vw', margin: 'auto auto'}}>
       <ColorContext.Provider
         value={{
           pickedColor: handlePickedColor,
