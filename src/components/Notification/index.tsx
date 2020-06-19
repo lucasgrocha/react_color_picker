@@ -16,6 +16,8 @@ interface NotificationProps {
   title: string;
   description?: string;
   type: string;
+  autohide?: boolean;
+  timeout?: number;
 }
 
 const Notification: React.FC<NotificationProps> = (props) => {
@@ -42,11 +44,19 @@ const Notification: React.FC<NotificationProps> = (props) => {
     if (!show && animationClass[1] === "animate__fadeInDown") {
       let updatedState = [...animationClass];
 
-      updatedState[1] = "animate__fadeOutDown";
+      updatedState[1] = "animate__fadeOutRight";
 
       setAnimationClass(updatedState);
     }
   }, [show, animationClass]);
+
+  useEffect(() => {
+    if (props.autohide && props.timeout !== undefined) {
+      setTimeout(() => {
+        setShow(false)
+      }, props.timeout * 1000)
+    }
+  }, [props.autohide, props.timeout])
 
   return (
     <div style={{ width: "100%", display: "flex", flexDirection: "column" }}>

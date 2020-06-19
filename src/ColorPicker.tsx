@@ -40,6 +40,9 @@ const ColorPicker = () => {
             title="Success"
             type="success"
             description={`The copy get success with color ${pickedColor}`}
+
+            autohide
+            timeout={3}
           />
         ))}
       </div>
