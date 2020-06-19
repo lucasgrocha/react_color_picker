@@ -61,19 +61,25 @@ const Notification: React.FC<NotificationProps> = (props) => {
   return (
     <>
       {dispose && (
-        <NotificationBox className={animationClass.join(" ")}>
-          <CloseButton onClick={handleClosed}>
-            <CloseCircle />
-          </CloseButton>
-          <Texts>
-            <Title>{props.title}</Title>
-            <Description>{props.description}</Description>
-          </Texts>
-          <SideBar timeout={!!props.timeout ? props.timeout : undefined} />
-        </NotificationBox>
+        <>
+          <audio
+            autoPlay={true}
+            src={require("../../assets/sounds/pop_sound.mp3")}
+          />
+          <NotificationBox className={animationClass.join(" ")}>
+            <CloseButton onClick={handleClosed}>
+              <CloseCircle />
+            </CloseButton>
+            <Texts>
+              <Title>{props.title}</Title>
+              <Description>{props.description}</Description>
+            </Texts>
+            <SideBar timeout={!!props.timeout ? props.timeout : undefined} />
+          </NotificationBox>
+        </>
       )}
     </>
   );
 };
 
-export default Notification;
+export default React.memo(Notification);
