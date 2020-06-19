@@ -53,23 +53,25 @@ const Notification: React.FC<NotificationProps> = (props) => {
   useEffect(() => {
     if (props.autohide && props.timeout !== undefined) {
       setTimeout(() => {
-        setShow(false)
-      }, props.timeout * 1000)
+        setShow(false);
+      }, props.timeout * 1000);
     }
-  }, [props.autohide, props.timeout])
+  }, [props.autohide, props.timeout]);
 
   return (
-    <div style={{ width: "100%", display: "flex", flexDirection: "column" }}>
-      <NotificationBox disposed={dispose} className={animationClass.join(" ")}>
-        <CloseButton onClick={handleClosed}>
-          <CloseCircle />
-        </CloseButton>
-        <Texts>
-          <Title>{props.title}</Title>
-          <Description>{props.description}</Description>
-        </Texts>
-        <SideBar />
-      </NotificationBox>
+    <div style={{ display: "flex" }}>
+      {dispose && (
+        <NotificationBox className={animationClass.join(" ")}>
+          <CloseButton onClick={handleClosed}>
+            <CloseCircle />
+          </CloseButton>
+          <Texts>
+            <Title>{props.title}</Title>
+            <Description>{props.description}</Description>
+          </Texts>
+          <SideBar />
+        </NotificationBox>
+      )}
     </div>
   );
 };

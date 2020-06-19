@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
-interface NotificationBoxProps {
-  disposed: boolean;
-}
-
-export const NotificationBox = styled.div<NotificationBoxProps>`
+export const NotificationBox = styled.div`
   background-color: white;
   top: 20px;
   right: 20px;
@@ -12,8 +8,6 @@ export const NotificationBox = styled.div<NotificationBoxProps>`
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 5px;
-  display: ${props => props.disposed ? 'initial' : 'none'};
-;
 `
 
 export const Texts = styled.div`
