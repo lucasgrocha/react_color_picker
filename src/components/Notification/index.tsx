@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { CloseCircle } from "@styled-icons/evaicons-solid";
+import PopSound from './PopSound'
 
 import "animate.css";
 
@@ -62,10 +63,7 @@ const Notification: React.FC<NotificationProps> = (props) => {
     <>
       {dispose && (
         <>
-          <audio
-            autoPlay={true}
-            src={require("../../assets/sounds/pop_sound.mp3")}
-          />
+          <PopSound />
           <NotificationBox className={animationClass.join(" ")}>
             <CloseButton onClick={handleClosed}>
               <CloseCircle />
