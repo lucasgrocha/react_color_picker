@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const NotificationBox = styled.div`
+interface NotificationBoxProps {
+  disposed: boolean;
+}
+
+export const NotificationBox = styled.div<NotificationBoxProps>`
   background-color: white;
   top: 20px;
   right: 20px;
@@ -8,6 +12,7 @@ export const NotificationBox = styled.div`
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 5px;
+  display: ${props => props.disposed ? 'initial' : 'none'};
 ;
 `
 
@@ -46,8 +51,6 @@ export const CloseButton = styled.div`
   }
 
   &:active {
-    svg {
-      color: blue;
-    }
+    
   }
 `

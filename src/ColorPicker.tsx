@@ -26,6 +26,7 @@ const ColorPicker = () => {
     <div style={{position: 'fixed', width: '300px', top: '10px', right: '15px'}}>
       <Notification title='Success' type='success' description='The copy get success' />
       <Notification title='Success' type='success' description='The copy get success' />
+      <Notification title='Success' type='success' description='The copy get success' />
     </div>
       <div style={{ width: '85vw', margin: 'auto' }}>
         <ColorContext.Provider
