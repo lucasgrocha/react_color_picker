@@ -59,7 +59,7 @@ const Notification: React.FC<NotificationProps> = (props) => {
   }, [props.autohide, props.timeout]);
 
   return (
-    <div style={{ display: "flex" }}>
+    <>
       {dispose && (
         <NotificationBox className={animationClass.join(" ")}>
           <CloseButton onClick={handleClosed}>
@@ -72,7 +72,7 @@ const Notification: React.FC<NotificationProps> = (props) => {
           <SideBar />
         </NotificationBox>
       )}
-    </div>
+    </>
   );
 };
 

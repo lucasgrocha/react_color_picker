@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const NotificationBox = styled.div`
-  background-color: white;
   top: 20px;
   right: 20px;
   background-color: #3abd81;
