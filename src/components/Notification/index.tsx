@@ -69,7 +69,7 @@ const Notification: React.FC<NotificationProps> = (props) => {
             <Title>{props.title}</Title>
             <Description>{props.description}</Description>
           </Texts>
-          <SideBar />
+          <SideBar timeout={!!props.timeout ? props.timeout : undefined} />
         </NotificationBox>
       )}
     </>

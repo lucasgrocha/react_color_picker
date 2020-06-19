@@ -24,11 +24,24 @@ export const Description = styled.span`
   font-size: 0.7em;
 `
 
-export const SideBar = styled.div`
+interface SideBarProps {
+  timeout?: number;
+}
+
+export const SideBar = styled.div<SideBarProps>`
   position: relative;
-  width: 100%;
   height: 10px;
   background-color: #60a72b;
+  border-radius: 10px;
+  animation: loading_bar ${props => !!props.timeout ? props.timeout : 1000 }s both ease-in-out;
+
+  @keyframes loading_bar {
+    from {
+      width: 100%;
+    } to {
+      width: 0%;
+    }
+  }
 `
 
 export const CloseButton = styled.div`
