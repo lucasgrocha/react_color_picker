@@ -1,4 +1,5 @@
 import React from "react";
+import CopyToClipboard from 'react-copy-to-clipboard';
 
 import styled from "styled-components";
 
@@ -28,7 +29,10 @@ interface Props {
 }
 
 const color: React.FC<Props> = (props) => (
-  <StyledDiv color={props.color} onClick={() => props.clicked(props.color)} />
+
+  <CopyToClipboard text={props.color} onCopy={() => props.clicked(props.color)}>
+    <StyledDiv color={props.color} />
+  </CopyToClipboard>
 );
 
 export default color;
