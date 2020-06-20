@@ -39,7 +39,7 @@ const ColorPicker = () => {
             key={`${pickedColor}_${index}`}
             title="Success"
             type="success"
-            description={`The copy get success with color ${pickedColor}`}
+            description={`Copied to clipboard: ${pickedColor}`}
 
             autohide
             timeout={3}
