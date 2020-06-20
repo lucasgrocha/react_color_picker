@@ -6,9 +6,7 @@ const PopSound = () => (
     onPlay={() => {
       const audios = document.getElementsByTagName("audio");
 
-      for (let audio of audios as any) {
-        audio.volume = 0.1;
-      }
+      audios[audios.length - 1].volume = 0.1;
     }}
     src={require("../../../assets/sounds/pop_sound.mp3")}
   />
