@@ -26,14 +26,19 @@ export const Description = styled.span`
 
 interface SideBarProps {
   timeout?: number;
+  autohide?: boolean;
 }
 
 export const SideBar = styled.div<SideBarProps>`
   position: relative;
   height: 10px;
   background-color: #60a72b;
+  width: 100%;
   border-radius: 10px;
-  animation: loading_bar ${props => !!props.timeout ? props.timeout : 1000 }s both ease-in-out;
+
+  ${props => !!props.timeout && props.autohide && (
+    `animation: loading_bar ${props.timeout}s both ease;`
+  )}
 
   @keyframes loading_bar {
     from {
