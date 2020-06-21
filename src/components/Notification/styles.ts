@@ -32,7 +32,7 @@ interface SideBarProps {
 export const SideBar = styled.div<SideBarProps>`
   position: relative;
   height: 10px;
-  background-color: #60a72b;
+  background-color: #2e981f;
   width: 100%;
   border-radius: 10px;
 
@@ -59,9 +59,12 @@ export const CloseButton = styled.div`
     top: 10px;
     right: 8px;
     color: white;
+    transition: .5s;
   }
 
-  &:active {
-    
+  &:hover {
+    svg {
+      transform: scale(1.1);
+    }
   }
 `

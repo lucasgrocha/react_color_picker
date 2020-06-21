@@ -42,7 +42,7 @@ const ColorPicker = () => {
             description={`Copied to clipboard: ${pickedColor}`}
 
             autohide
-            timeout={3}
+            timeout={5}
           />
         ))}
       </div>
