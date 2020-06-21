@@ -30,7 +30,6 @@ interface SideBarProps {
 }
 
 export const SideBar = styled.div<SideBarProps>`
-  position: relative;
   height: 10px;
   background-color: #2e981f;
   width: 100%;
@@ -51,7 +50,6 @@ export const SideBar = styled.div<SideBarProps>`
 
 export const CloseButton = styled.div`
   cursor: pointer;
-  position: relative;
 
   svg {
     width: 20px;
